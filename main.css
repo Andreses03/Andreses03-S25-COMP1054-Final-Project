@@ -1,0 +1,230 @@
+/* === Local Font: Cardo === */
+@font-face {
+  font-family: 'CardoLocal';
+  src: url('fonts/Cardo-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* 1rem = 16px */
+}
+
+body {
+  font-family: 'Newsreader', serif;
+  background-color: #0d0d0d;
+  color: #f2f2f2;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  animation: fadeIn 1s ease-in;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === Headings with Cardo font === */
+h1, h2, h3 {
+  font-family: 'CardoLocal', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* === General section padding and layout === */
+section {
+  padding: 5rem 1.25rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Navigation Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(13, 13, 13, 0.95);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+header a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+/* === Intro section with full screen background image === */
+#intro {
+  height: 100vh;
+  max-width: none;
+  background: url('images/background.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  animation: slideFade 1.5s ease-out;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-text h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease;
+}
+
+.intro-text p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.button-link {
+  color: #0d0d0d;
+  background-color: #f2f2f2;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+  animation: fadeIn 3s ease;
+}
+
+.button-link:hover {
+  background-color: #e2e2e2;
+}
+
+/* === About section styling === */
+
+.about-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  font-size: 1.25rem;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+  justify-self: end;
+}
+
+/* === Grid layout for featured projects === */
+#projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* === Individual project card styling === */
+.project {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-0.25rem);
+}
+
+.project img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* === Contact form layout === */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+/* === Form input and textarea styling === */
+input, textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-family: 'Newsreader', serif;
+  font-size: 1rem;
+}
+
+/* === Submit button === */
+button {
+  padding: 0.75rem;
+  background-color: #f2f2f2;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* === Footer styling === */
+footer {
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  background-color: #1a1a1a;
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: #f2f2f2;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+/* === Responsive Design for Smaller Screens === */
+@media (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 3rem;
+  }
+
+  .intro-text p {
+    font-size: 1.4rem;
+  }
+
+  section {
+    padding: 3.75rem 1rem;
+  }
+
+  #projects .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
